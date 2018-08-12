@@ -1,0 +1,49 @@
+var crystal1 = Math.floor(Math.random() * 12) + 1);
+var crystal2 = Math.floor(Math.random() * 12) + 1);
+var crystal3 = Math.floor(Math.random() * 12) + 1);
+var crystal4 = Math.floor(Math.random() * 12) + 1);
+
+$("#result").text(randomResult);
+
+$("#amountWins").text(wins);
+$("#amountLosses").text(losses);
+
+function reset() {
+    randomResult = Math.floor(Math.random() * 101) + 19);
+    console.log(randomResult);
+    $("#result").text(randomResult);
+    var crystal1 = Math.floor(Math.random() * 12) + 1);
+    var crystal2 = Math.floor(Math.random() * 12) + 1);
+    var crystal3 = Math.floor(Math.random() * 12) + 1);
+    var crystal4 = Math.floor(Math.random() * 12) + 1);
+    userTotal = 0;
+    $("#score").text(userTotal);
+}
+
+function winner() {
+    alert("You Won!");
+    wins++;
+    $("#amountWins").text(wins);
+    reset();
+}
+
+function loser() {
+    alert("You Lost!");
+    losses++;
+    $("#amountLosses").text(losses);
+    reset();
+}
+
+$("#image1").on("click", function() {
+    userTotal = userTotal + num1;
+    console.log("New userTotal " + userTotal);
+    $("#score").text(userTotal);
+
+    if (userTotal === random) {
+        winner()
+    }
+
+    else if (userTotal > random) {
+        loser()
+    } 
+}

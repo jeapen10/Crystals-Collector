@@ -5,51 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystal Game</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Crystals Collector</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-
-    <header>Crystal Collector!</header>
-
-    <h1>Number to Guess: <span id="number-to-guess"></span></h1>
-
     <div class="container">
-        <p>
-            You will be given a random number at the start of the game.
-        </p>
-        <p>
-            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
-        </p>
-        <p>
-            You win the game by matching your total score to random number, you lose the game if your total score goes above the random
-            number.
-        </p>
-        <p>
-            The value of each crystal is hidden from you until you click on it.
-        </p>
-        <p>
-            Each time when the game starts, the game will change the values of each crystal.
-        </p>
-    </div>
-
-    <div class="crystals">
-        <img class="image" id="crystal1" src="assets/images/crystal-1.jpg" alt="crystal 1">
-        <img class="image" id="crystal2" src="assets/images/crystal-2.jpg" alt="crystal 2">
-        <img class="image" id="crystal3" src="assets/images/crystal-3.jpg" alt="crystal 3">
-        <img class="image" id="crystal4" src="assets/images/crystal-4.jpg" alt="crystal 4">
+        <div class="jumbotron" style="background-color: orangered; color: white;">
+            <div class="container">
+                <h1 class="text-center"><strong>Crystals Collector!</strong></h1>
+            </div>
+        </div>
 
         <div class="row">
-				<div class="col-md-12 buttons"></div>
-		</div>
+            <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Instructions</h3>
+                        </div>
+                        <div class="panel-body">
+                            You will be given a random number at the start of the game, which will be your target number.
+                            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score, depending on the value of the crystal you select.
+                            <br>
+                            <br>
+                            You win the game by matching your total score to the target number and you lose the game if your total score goes above the target
+                            number.
+                            The value of each crystal is hidden from you until you click on it                                    Each time when the game starts, the game will change the values of each crystal.
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Target Number -->
+        <div class="col-md-3">
+            <div class="panel panel-success">
+                <div class="panel-body">
+                    <h1 class="text-center" id="targetNumber"></h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Your Score -->
+        <div class="col-md-9">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Your total score is:</h3>
+                </div>
+                <div class="panel-body">
+                    <h3 class="text-center" id="currentScore"></h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crystals -->
+        <div class="col-md-12">
+            <div class="panel-body text-center">
+                <img id="crystal1" src="assets/images/crystal1.jpg" alt="1">
+                <img id="crystal2" src="assets/images/crystal2.jpg" alt="2">
+                <img id="crystal3" src="assets/images/crystal3.jpg" alt="3">
+                <img id="crystal4" src="assets/images/crystal4.jpg" alt="4">
+            </div>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-title">Wins:</div>
+                    <div class="panel-body">
+                        <h3 class="text-left" id="win"><strong>0</strong></h3>
+                    </div>
+                    <div class="panel-title">Losses:</div>
+                    <div class="panel-body">
+                        <h3 class="text-left" id="loss"><strong>0</strong></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
-
 </body>
 
 </html>

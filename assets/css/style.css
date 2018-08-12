@@ -1,12 +1,10 @@
-
-.crystals {
-    display: flex;
+#crystal1,
+#crystal2,
+#crystal3,
+#crystal4
+{
+    display: inline-block;
     justify-content: space-around;
     align-items: center;
 }
 
-.buttons {
-    border: 1px solid green;
-    width: 300px;
-    height: 300px;
-}
