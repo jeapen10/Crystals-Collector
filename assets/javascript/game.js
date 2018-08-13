@@ -15,12 +15,12 @@ $(document).ready(function () {
         currentScore = 0;
 
         // Sets a random target number between 19 and 120
-        var targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+        targetNumber = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 
-        var crystal1 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-        var crystal2 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-        var crystal3 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-        var crystal4 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+        crystal1 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+        crystal2 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+        crystal3 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
+        crystal4 = Math.floor(Math.random() * (12 - 1 + 1)) + 1;
 
         // Change the current score and target number
         $("#currentScore").html(currentScore);
@@ -34,10 +34,11 @@ $(document).ready(function () {
     }
 
     // Change currentScore 
-    $("#currentScore").html(currentScore);
+    
 
     function scoreCheck() {
-        if (currentScore == targetNumber) {
+        $("#currentScore").html(currentScore);
+        if (currentScore === targetNumber) {
             alert ("Nice, you won!");
             wins++;
 
